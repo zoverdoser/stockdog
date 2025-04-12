@@ -22,6 +22,11 @@ npm run dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
+## Get Docker Image from Docker Hub
+```bash
+docker pull zoverdoser/stockdog-web:latest
+```
+
 ## Build Docker Image
 
 Run build.sh to build docker image.

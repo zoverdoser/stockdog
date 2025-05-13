@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html lang="zh-cmn-Hans" class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html lang="zh-cmn-Hans" class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html lang="zh-cmn-Hans" class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html lang="zh-cmn-Hans" class="no-js" manifest="cache.manifest"> <!--<![endif]-->
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="renderer" content="webkit">
+    <meta http-equiv="Cache-Control" content="no-siteapp">
+    <meta name="author" content="zoverdoser, zoverdoser@gmail.com">
+    <title>联合利华</title>
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="HandheldFriendly" content="true">
+    <meta name="MobileOptimized" content="320">
+    <meta content="telephone=no,address=no,email=no" name="format-detection">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta http-equiv="cleartype" content="on">
+    <meta name="msapplication-tap-highlight" content="no">
+    <meta name="viewport" content="width=640, user-scalable=no">
+    <script src="js/viewport.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+</head>
+<body>
+    <div class="start-page">
+        <div class="tutorial"><img src="images/tutorial.png" alt=""></div>
+        <a class="btn btn-start"><img src="images/btn-start.png"></a>
+    </div>
+    <div id="loading">
+        <div class="loadingBall">
+            <div class="ball"><img src="images/ball1.png"></div>
+            <div class="ball"><img src="images/ball2.png"></div>
+            <div class="ball"><img src="images/ball3.png"></div>
+            <div class="ball"><img src="images/ball4.png"></div>
+        </div>
+        <div class="loadingText"><img src="images/loading.png"></div>
+    </div>
+    <div id="game" class="wrapper">
+        <canvas id="gameCanvas" width="640" height="1040"></canvas>
+        <a href="javascript:;" class="pauseBtn"><img src="images/pauseBtn.png"></a>
+        <div class="countDown"></div>
+    </div>
+    <!--<div class="pop pop-fail">
+        <div class="pop-fail-bg">
+            <img src="images/pop-fail-bg.png" alt="">
+            <div class="pop-fail-cont">
+                <div class="fail-text">
+                    <div class="fail-score">1542</div>
+                </div>
+                <div class="btn-hide-before fail-btn-zsyc"><img src="images/btn-zsyc.png" alt=""></div>
+                <div class="btn-hide-before fail-btn-fhzy"><img src="images/btn-fhzy.png" alt=""></div>
+            </div>
+        </div>
+    </div>-->
+    <div class="pop pop-topList">
+        <div class="pop-topList-bg">
+            <img src="images/pop-topList-bg.png" alt="">
+            <div class="pop-topList-cont">
+                <div class="topList-text">
+                    <table class="top-list">
+                        <tbody>
+                            <tr>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                            </tr>
+                            <tr>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                                <td><span class="list-cell">&nbsp;</span></td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                <div class="btn-hide-before topList-btn-zsyc"><img src="images/btn-zsyc.png" alt=""></div>
+                <div class="btn-hide-before topList-btn-fhzy"><img src="images/btn-fhzy.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <div class="pop pop-success">
+        <div class="pop-success-bg">
+            <img src="images/pop-success-bg.png" alt="">
+            <div class="pop-success-cont">
+                <div class="success-tips">
+                    <img class="gongxini" src="images/gongxini.png" alt="恭喜你">
+                    <img class="stars" src="images/stars.png" alt="星星">
+                </div>
+                <div class="success-text">1542</div>
+                <div class="btn-hide-before success-btn-zsyc"><img src="images/btn-tijiao.png" alt=""></div>
+                <div class="btn-hide-before success-btn-fhzy"><img src="images/btn-quxiao.png" alt=""></div>
+                <img style="display: none;" src="images/input-bg.png" alt="输入框背景">
+                <!-- <div id="inputDisplay"></div> -->
+                <div class="success-input-area">
+                    <input class="success-input" id="mobile" type="text" maxlength="11" autofocus>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="pop pop-shuoming">
+        <div class="pop-shuoming-bg">
+            <img src="images/pop-shuoming-bg.png" alt="">
+            <div class="pop-shuoming-cont">
+                <div class="btn-hide-before shuoming-btn-fhyx"><img src="images/btn-fanhuiyouxi.png" alt=""></div>
+            </div>
+        </div>
+    </div>
+    <script>
+        // document.addEventListener('WeixinJSBridgeReady', function onBridgeReady() {
+        //     WeixinJSBridge.call('hideOptionMenu');
+        // }, false);
+    </script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/createjs.min.js"></script>
+    <script src="js/movieclip.js"></script>
+    <script src="js/element.js"></script>
+    <script src="js/main.js"></script>
+    <script src="js/component-loading.js"></script>
+</body>
+</html>

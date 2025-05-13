@@ -1,0 +1,355 @@
+body {
+    font-size: 0;
+    overflow: hidden;
+    height: 100%;
+}
+img {
+    display: block;
+}
+.hidden {
+    display: none;
+}
+.wrapper {
+    position: relative;
+    min-height: 100%;
+    box-sizing: border-box;
+}
+.pop {
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 999;
+    background: rgba(0,0,0,.8);
+}
+.pop > div {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+}
+#loading {
+    background: #10060f;
+}
+#loading .star {
+    width: 300px;
+    height: 220px;
+    position: absolute;
+    top: 275px;
+    left: 170px;
+    overflow: hidden;
+}
+#loading .star .top {
+    width: 100%;
+    height: 100%;
+    position: relative;
+    z-index: 2;
+}
+#loading .star .bottom {
+    width: 0;
+    max-width: 298px;
+    min-width: 0;
+    height: 218px;
+    background: #d5e1f1;
+    position: absolute;
+    top: 1px;
+    left: 1px;
+    z-index: 1;
+}
+#loading .value {
+    width: 100%;
+    height: auto;
+    position: absolute;
+    top: 465px;
+    left: 0;
+    text-align: center;
+    font-size: 24px;
+    color: #fff;
+    z-index: 2;
+}
+#loading .value::after {
+    content: '%';
+    font-size: 12px;
+}
+#marker {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    pointer-events: none;
+    list-style: none;
+    z-index: 10;
+}
+#scene #marker li {
+    position: absolute;
+    opacity: 1;
+    transition: opacity 0.4s;
+}
+#scene #marker li.off {
+    opacity: 0;
+}
+#scene #marker li.mark1 {
+    width: 189px;
+    height: 59px;
+    margin: -12px 0 0 -196px;
+}
+#scene #marker li.mark2 {
+    width: 106px;
+    height: 54px;
+    margin: -10px 0 0 -132px;
+}
+#scene #marker li.mark3 {
+    width: 121px;
+    height: 48px;
+    margin: 20px 0 0 -126px;
+}
+#scene #marker li.mark4,
+#scene #marker li.mark5 {
+    width: 108px;
+    height: 56px;
+    margin: -55px 0 0 12px;
+}
+#scene #marker li.mark6 {
+    width: 132px;
+    height: 58px;
+    margin: -68px 0 0 -140px;
+}
+#scene #marker li.mark7 {
+    width: 106px;
+    height: 57px;
+    margin: -75px 0 0 12px;
+}
+#scene #marker li .spot {
+    width: 52px;
+    height: 52px;
+    position: absolute;
+}
+#scene #marker li .spot::before {
+    content: '';
+    width: 10px;
+    height: 10px;
+    background: #fff;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0.8;
+}
+#scene #marker li .spot::after {
+    content: '';
+    width: 52px;
+    height: 52px;
+    background: #fff;
+    border-radius: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    margin: auto;
+    opacity: 0;
+    -webkit-transform-origin: center;
+    transform-origin: center;
+    -webkit-animation: zoom 1s infinite;
+    animation: zoom 2s infinite;
+}
+@-webkit-keyframes zoom {
+    0% {
+        opacity: 0.5;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+@keyframes zoom {
+    0% {
+        opacity: 0.5;
+        -webkit-transform: scale(0);
+        transform: scale(0);
+    }
+    100% {
+        opacity: 0;
+        -webkit-transform: scale(1);
+        transform: scale(1);
+    }
+}
+#scene #marker li.mark1 .spot,
+#scene #marker li.mark2 .spot,
+#scene #marker li.mark6 .spot {
+    bottom: -26px;
+    right: -26px;
+}
+#scene #marker li.mark3 .spot {
+    top: -26px;
+    right: -26px;
+}
+#scene #marker li.mark4 .spot,
+#scene #marker li.mark5 .spot,
+#scene #marker li.mark7 .spot {
+    bottom: -26px;
+    left: -26px;
+}
+#scene .logo {
+    width: 164px;
+    height: 29px;
+    position: absolute;
+    bottom: 55px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    background: url(../images/logo.png) center no-repeat;
+    background-size: cover;
+    pointer-events: none;
+}
+#scene .rightsBtn {
+    width: 84px;
+    height: 87px;
+    position: absolute;
+    top: 29px;
+    left: 38px;
+    z-index: 1;
+    background: url(../images/rightsBtn.png) center no-repeat;
+    background-size: cover;
+}
+#scene .hand {
+    width: 290px;
+    height: 50px;
+    position: absolute;
+    top: 680px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    background: url(../images/hand.png) center no-repeat;
+    background-size: cover;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    opacity: 0;
+    pointer-events: none;
+}
+#scene .hand.on {
+    opacity: 1;
+}
+#scene .slogan {
+    width: 404px;
+    height: 108px;
+    position: absolute;
+    top: 103px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    pointer-events: none;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    opacity: 0;
+    z-index: 10;
+}
+#scene .slogan.on {
+    opacity: 1;
+}
+#scene #canvasBox {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+}
+#scene .holdBtn {
+    width: 126px;
+    height: 126px;
+    position: absolute;
+    bottom: 126px;
+    left: 0;
+    right: 0;
+    margin: auto;
+    z-index: 1;
+    opacity: 0;
+    pointer-events: none;
+    -webkit-transition: all 0.8s;
+    transition: all 0.8s;
+    background: url(../images/holdBtn.png) center no-repeat;
+    background-size: cover;
+}
+#scene .holdBtn.on {
+    opacity: 1;
+    pointer-events: all;
+    -webkit-animation: flash 1.4s infinite alternate;
+    animation: flash 1.4s infinite alternate;
+}
+@-webkit-keyframes flash {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+@keyframes flash {
+    0% {
+        opacity: 0.3;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+.pop.rights .rightsPop {
+    width: 523px;
+    height: 873px;
+}
+.pop.rights .rightsPop .close {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    bottom: 3px;
+    left: -14px;
+    right: 0;
+    margin: auto;
+}
+.pop.rights .rightsPop .link {
+    width: 350px;
+    height: 100px;
+    position: absolute;
+    left: 90px;
+}
+.pop.rights .rightsPop .link.coupon {
+    top: 63px;
+}
+.pop.rights .rightsPop .link.data {
+    top: 164px;
+}
+.pop.rights .rightsPop .link.ball {
+    top: 266px;
+}
+.pop.rights .rightsPop .link.center {
+    top: 363px;
+}
+.pop.rights .rightsPop .link.movie {
+    top: 452px;
+}
+.pop.rights .rightsPop .link.coin {
+    top: 545px;
+}
+.pop.rights .rightsPop .link.money {
+    top: 646px;
+}
+.pop.inside {
+    background: rgba(0,0,0,.9);
+}
+.pop.inside > div {
+    width: 640px;
+    height: 1040px;
+}

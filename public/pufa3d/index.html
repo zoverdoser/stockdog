@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="utf-8" manifest="cache.appcache">
+    <base href="">
+    <title></title>
+    <meta name="format-detection" content="telephone=no, address=no, email=no">
+    <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=0">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <script src="js/viewport.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/reset.css">
+    <link rel="stylesheet" type="text/css" href="css/style.css">
+    <script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+</head>
+<body>
+    <div class="wrapper" id="loading">
+        <img src="images/loadingBg.jpg" alt="">
+        <div class="star">
+            <div class="bottom"></div>
+            <img class="top" src="images/star.png" alt="">
+        </div>
+        <div class="value">0</div>
+    </div>
+    <div class="wrapper hidden" id="scene">
+        <ul id="marker">
+            <li class="mark1 off"><img src="images/directions/text1.png" alt=""><div class="spot"></div></li>
+            <li class="mark2 off"><img src="images/directions/text2.png" alt=""><div class="spot"></div></li>
+            <li class="mark3 off"><img src="images/directions/text3.png" alt=""><div class="spot"></div></li>
+            <li class="mark4 off"><img src="images/directions/text4.png" alt=""><div class="spot"></div></li>
+            <li class="mark5 off"><img src="images/directions/text5.png" alt=""><div class="spot"></div></li>
+            <li class="mark6 off"><img src="images/directions/text6.png" alt=""><div class="spot"></div></li>
+            <li class="mark7 off"><img src="images/directions/text7.png" alt=""><div class="spot"></div></li>
+        </ul>
+        <div class="logo"></div>
+        <a class="rightsBtn"></a>
+        <div class="hand"></div>
+        <div class="slogan"><img src="images/slogan.png" alt=""></div>
+        <div id="canvasBox"></div>
+        <a class="holdBtn"></a>
+    </div>
+    <div class="pop rights hidden">
+        <div class="rightsPop">
+            <img src="images/rightsPop.png" alt="">
+            <a href="http://ccc.spdb.com.cn/miniSite/1359/" class="link coupon"></a>
+            <a href="http://ccc.spdb.com.cn/miniSite/1085/" class="link data"></a>
+            <a href="http://ccc.spdb.com.cn/miniSite/1337/" class="link ball"></a>
+            <a href="http://www.spdbccc.com.cn/zh/wap/newwap/wzsq/index.html" class="link center"></a>
+            <a href="http://spdtl.e-pointchina.com.cn/film_spd/wx/filmspd?entryType=0" class="link movie"></a>
+            <a href="https://open.weixin.qq.com/connect/oauth2/authorize?appid=wxe9d7e3d98ec68189&redirect_uri=https://weixin.spdbccc.com.cn/spdbcccWeChatPage/universalIntergral/index.do&response_type=code&scope=snsapi_base&state=STATE#wechat_redirect" class="link coin"></a>
+            <a href="http://ccc.spdb.com.cn/miniSite/1349/" class="link money"></a>
+            <a class="close"></a>
+        </div>
+    </div>
+    <div class="pop inside hidden">
+        <div class="insidePop"><canvas width="640" height="1040" id="canvas"></canvas></div>
+    </div>
+    <script type="text/javascript" src="dist/js/common.js"></script>
+    <script type="text/javascript" src="dist/js/index.js"></script>
+</body>
+</html>
